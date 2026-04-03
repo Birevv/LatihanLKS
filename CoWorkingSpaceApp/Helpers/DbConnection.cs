@@ -9,7 +9,7 @@ namespace CoWorkingSpaceApp.Helpers
 {
     public static class DbConnection
     {
-        private static string connectionString = @"Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;";
+        private static string connectionString = @"Server=DESKTOP-DV8SGV8\SQLEXPRESS;Initial Catalog=CoWorkingSpaceAppDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
         public static SqlConnection GetConn()
         {

@@ -11,6 +11,11 @@ namespace CoWorkingSpaceApp.Repositories
 {
     public class BaseRepository<T> where T : class
     {
+
+
+
+        // SHOW PRODUCT
+        
         public IEnumerable<T> GetAll() 
         {
             using (SqlConnection db = DbConnection.GetConn())
@@ -25,6 +30,8 @@ namespace CoWorkingSpaceApp.Repositories
                 return db.Get<T>(id);
             }
         }
+
+        // INSERT PRODUCT
         public long Insert(T entity)
         {
             using (SqlConnection db = DbConnection.GetConn())
@@ -33,6 +40,7 @@ namespace CoWorkingSpaceApp.Repositories
             }
         }
 
+        // UPDATE PRODUCT
         public bool Update(T entity)
         {
             {
@@ -42,6 +50,8 @@ namespace CoWorkingSpaceApp.Repositories
                 }
             }
         }
+
+        // DELETE PRODUCT
         public bool DeleteById(int id)
         {
             using (SqlConnection db = DbConnection.GetConn())

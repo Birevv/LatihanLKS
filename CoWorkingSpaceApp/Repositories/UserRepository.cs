@@ -7,6 +7,7 @@ using Dapper;
 using CoWorkingSpaceApp.Helpers;
 using CoWorkingSpaceApp.Models;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace CoWorkingSpaceApp.Repositories
 {
@@ -14,11 +15,23 @@ namespace CoWorkingSpaceApp.Repositories
     {
         public users Login(string email, string password)
         {
-            using (SqlConnection db = new SqlConnection())
+            try
             {
-                string query = "SELECT * FROM users WHERE email = @Email AND password = @password AND role = 'admin'";
-                return db.QueryFirstOrDefault<users>(query, new {Email = email, password = password});
+                using (IDbConnection db = DbConnection.GetConn())
+                {
+                    string query = "SELECT * FROM users WHERE email = @Email AND password = @password AND role = 'admin'";
+                    return db.QueryFirstOrDefault<users>(query, new { Email = email, password = password });
+                }
             }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception("Terjadi Kesalahan pada database: "  + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Terjadi Kesalahan: " + ex.Message);
+            }
+            
         }
     }
 }
