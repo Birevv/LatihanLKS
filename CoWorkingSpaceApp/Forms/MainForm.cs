@@ -22,21 +22,20 @@ namespace CoWorkingSpaceApp.Forms
         {
             if (SessionHelper.CurrentUser != null)
             {
-                lbWelcome.Text = $"Welcome, {SessionHelper.CurrentUser.name}!";
+                lbWelcome.Text = SessionHelper.CurrentUser.name;
+                ;
 
                 if (SessionHelper.CurrentUser.role == "Customer")
                 {
-                    btn_MasterWorkspace.Visible = false;
+                    panel4.Visible = false;
+                    label4.Text = "Dashboard";
                 }
                 else if (SessionHelper.CurrentUser.role == "Admin")
                 {
                     btn_MasterWorkspace.Visible = true;
+                    label4.Text = "Dashboard Admin";
+
                 }
-            }
-            else
-            {
-                lbWelcome.Text = "Welcome, Guest";
-                btn_MasterWorkspace.Visible = false;
             }
         }
         
@@ -59,6 +58,11 @@ namespace CoWorkingSpaceApp.Forms
         private void btn_Dashboard_MouseLeave(object sender, EventArgs e)
         {
           
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -19,7 +19,7 @@ namespace CoWorkingSpaceApp.Repositories
             {
                 using (IDbConnection db = DbConnection.GetConn())
                 {
-                    string query = "SELECT * FROM users WHERE email = @Email AND password = @password AND role = 'admin'";
+                    string query = "SELECT * FROM users WHERE email = @Email AND password = @password";
                     return db.QueryFirstOrDefault<users>(query, new { Email = email, password = password });
                 }
             }
