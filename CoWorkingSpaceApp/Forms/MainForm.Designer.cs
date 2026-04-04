@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
@@ -39,9 +46,6 @@
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.btn_Report = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.btn_Dashboard = new System.Windows.Forms.Button();
@@ -51,22 +55,48 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.btn_MasterWorkspace = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.btn_Report = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dgv_dashboard = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.space_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
-            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dashboard)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +113,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 721);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lbWelcome);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.iconPictureBox7);
+            this.panel7.Controls.Add(this.panel6);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 561);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(257, 160);
+            this.panel7.TabIndex = 31;
             // 
             // lbWelcome
             // 
@@ -202,42 +245,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(254, 367);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.iconPictureBox5);
-            this.panel5.Controls.Add(this.btn_Report);
-            this.panel5.Location = new System.Drawing.Point(3, 273);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(254, 84);
-            this.panel5.TabIndex = 31;
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
-            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 40;
-            this.iconPictureBox5.Location = new System.Drawing.Point(24, 20);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(40, 40);
-            this.iconPictureBox5.TabIndex = 23;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // btn_Report
-            // 
-            this.btn_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Report.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Report.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Report.Location = new System.Drawing.Point(9, 12);
-            this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Size = new System.Drawing.Size(231, 55);
-            this.btn_Report.TabIndex = 22;
-            this.btn_Report.Text = "Report";
-            this.btn_Report.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -346,22 +353,287 @@
             this.btn_MasterWorkspace.Text = "     Room Management";
             this.btn_MasterWorkspace.UseVisualStyleBackColor = true;
             // 
-            // panel7
+            // panel5
             // 
-            this.panel7.Controls.Add(this.lbWelcome);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.iconPictureBox7);
-            this.panel7.Controls.Add(this.panel6);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 561);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(257, 160);
-            this.panel7.TabIndex = 31;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.iconPictureBox5);
+            this.panel5.Controls.Add(this.btn_Report);
+            this.panel5.Location = new System.Drawing.Point(3, 273);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(254, 84);
+            this.panel5.TabIndex = 31;
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 40;
+            this.iconPictureBox5.Location = new System.Drawing.Point(24, 20);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.iconPictureBox5.TabIndex = 23;
+            this.iconPictureBox5.TabStop = false;
+            // 
+            // btn_Report
+            // 
+            this.btn_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Report.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Report.Location = new System.Drawing.Point(9, 12);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(231, 55);
+            this.btn_Report.TabIndex = 22;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.comboBox1);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(257, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1091, 70);
+            this.panel8.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "2026",
+            "2025",
+            "2024"});
+            this.comboBox1.Location = new System.Drawing.Point(950, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(115, 31);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Dashboard";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.dgv_dashboard);
+            this.panel9.Controls.Add(this.label10);
+            this.panel9.Controls.Add(this.panel11);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.chart1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel9.Location = new System.Drawing.Point(257, 70);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1091, 651);
+            this.panel9.TabIndex = 4;
+            // 
+            // dgv_dashboard
+            // 
+            this.dgv_dashboard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_dashboard.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_dashboard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_dashboard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgv_dashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_dashboard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.space_id,
+            this.name,
+            this.type,
+            this.price,
+            this.capacity});
+            this.dgv_dashboard.EnableHeadersVisualStyles = false;
+            this.dgv_dashboard.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgv_dashboard.Location = new System.Drawing.Point(55, 387);
+            this.dgv_dashboard.Name = "dgv_dashboard";
+            this.dgv_dashboard.RowHeadersVisible = false;
+            this.dgv_dashboard.RowHeadersWidth = 51;
+            this.dgv_dashboard.RowTemplate.Height = 24;
+            this.dgv_dashboard.Size = new System.Drawing.Size(682, 237);
+            this.dgv_dashboard.TabIndex = 3;
+            this.dgv_dashboard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_booking_CellContentClick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 361);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 17);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Transaksi";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel11.Controls.Add(this.label8);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Location = new System.Drawing.Point(863, 146);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(202, 82);
+            this.panel11.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(13, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 28);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(15, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Data Room";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Location = new System.Drawing.Point(863, 44);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(202, 82);
+            this.panel10.TabIndex = 1;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(13, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(15, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Data User";
+            // 
+            // chart1
+            // 
+            chartArea1.AxisX.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(30, 44);
+            this.chart1.Name = "chart1";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.MediumPurple;
+            series1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.LabelForeColor = System.Drawing.Color.Gray;
+            series1.Legend = "Legend1";
+            series1.Name = "Booking";
+            series2.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.DeepPink;
+            series2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            series2.LabelForeColor = System.Drawing.Color.Gray;
+            series2.Legend = "Legend1";
+            series2.Name = "Revenue";
+            series2.YValuesPerPoint = 4;
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.DodgerBlue;
+            series3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            series3.LabelForeColor = System.Drawing.Color.Gray;
+            series3.Legend = "Legend1";
+            series3.Name = "Customer";
+            series3.YValuesPerPoint = 3;
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(707, 269);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.BorderWidth = 2;
+            title1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Statistics";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
+            // space_id
+            // 
+            this.space_id.DataPropertyName = "space_id";
+            this.space_id.HeaderText = "space_id";
+            this.space_id.MinimumWidth = 6;
+            this.space_id.Name = "space_id";
+            this.space_id.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Nama Ruangan";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "type";
+            this.type.HeaderText = "Tipe";
+            this.type.MinimumWidth = 6;
+            this.type.Name = "type";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "amount";
+            this.price.HeaderText = "Harga";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            // 
+            // capacity
+            // 
+            this.capacity.DataPropertyName = "capacity";
+            this.capacity.HeaderText = "Kapasitas";
+            this.capacity.MinimumWidth = 6;
+            this.capacity.Name = "capacity";
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -369,21 +641,31 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dashboard)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,5 +696,23 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private System.Windows.Forms.Button btn_Report;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv_dashboard;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn space_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacity;
     }
 }

@@ -61,5 +61,15 @@ namespace CoWorkingSpaceApp
                 MessageBox.Show($"Terjadi kesalahan saat login: {ex.Message}");
             }
         }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

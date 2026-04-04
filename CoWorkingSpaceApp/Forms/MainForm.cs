@@ -1,4 +1,6 @@
 ﻿using CoWorkingSpaceApp.Helpers;
+using CoWorkingSpaceApp.Models;
+using CoWorkingSpaceApp.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
 
 namespace CoWorkingSpaceApp.Forms
 {
@@ -23,7 +27,6 @@ namespace CoWorkingSpaceApp.Forms
             if (SessionHelper.CurrentUser != null)
             {
                 lbWelcome.Text = SessionHelper.CurrentUser.name;
-                ;
 
                 if (SessionHelper.CurrentUser.role == "Customer")
                 {
@@ -37,9 +40,26 @@ namespace CoWorkingSpaceApp.Forms
 
                 }
             }
-        }
-        
 
+            LoadDataSpaces();
+        }
+
+        private void LoadDataSpaces()
+        {
+            try
+            {
+                WorkspaceRepository workspaceRepo = new WorkspaceRepository();
+                var data = workspaceRepo.GetAllSpaces();
+                dgv_dashboard.DataSource = data.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading spaces: " + ex.Message);
+            }
+        }
+
+              
+       
         private void btn_MasterWorkspace_Click(object sender, EventArgs e)
         {
 
@@ -61,6 +81,31 @@ namespace CoWorkingSpaceApp.Forms
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+    
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgv_booking_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

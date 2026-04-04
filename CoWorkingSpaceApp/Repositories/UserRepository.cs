@@ -29,7 +29,7 @@ namespace CoWorkingSpaceApp.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception("Terjadi Kesalahan: " + ex.Message);
+                throw new Exception("Terjadi Kesalahan " + ex.Message);
             }
             
         }

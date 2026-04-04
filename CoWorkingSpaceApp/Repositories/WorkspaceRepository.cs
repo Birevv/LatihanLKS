@@ -29,6 +29,25 @@ namespace CoWorkingSpaceApp.Repositories
                 return db.Query<spaces>(query, new {Keyword = "%" + keyword + "%" });
             }
         }
+
+        public IEnumerable<spaceviewmodel> GetAllSpaces()
+        {
+            using (SqlConnection db = DbConnection.GetConn())
+            {
+                string query = @"
+            SELECT 
+                s.space_id, 
+                s.name, 
+                s.location, 
+                s.capacity, 
+                s.type, 
+                p.amount AS amount
+            FROM spaces s
+            LEFT JOIN bookings b ON s.space_id = b.space_id
+            LEFT JOIN payments p ON b.booking_id = p.booking_id";
+                return db.Query<spaceviewmodel>(query);
+            }
+        }
         
     }
 }
