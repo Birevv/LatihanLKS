@@ -48,6 +48,24 @@ namespace CoWorkingSpaceApp.Repositories
                 return db.Query<spaceviewmodel>(query);
             }
         }
+
+        public IEnumerable<chartdatamodel> GetStatisticsData()
+        {
+            using (SqlConnection db = DbConnection.GetConn())
+            {
+                string query = @"
+            SELECT 
+                s.type AS LabelX, 
+                COUNT(b.booking_id) AS TotalBooking, 
+                SUM(p.amount) AS Revenue, 
+                COUNT(DISTINCT b.user_id) AS TotalCustomer
+            FROM spaces s
+            LEFT JOIN bookings b ON s.space_id = b.space_id
+            LEFT JOIN payments p ON b.booking_id = p.booking_id
+            GROUP BY s.type";
+                return db.Query<chartdatamodel>(query);
+            }
+        }
         
     }
 }

@@ -42,6 +42,7 @@ namespace CoWorkingSpaceApp.Forms
             }
 
             LoadDataSpaces();
+            LoadDataChart();
         }
 
         private void LoadDataSpaces()
@@ -58,8 +59,51 @@ namespace CoWorkingSpaceApp.Forms
             }
         }
 
-              
-       
+        private void LoadDataChart()
+        {
+            try
+            {
+                // Panggil data dari database
+                WorkspaceRepository workspaceRepo = new WorkspaceRepository();
+                var chartData = workspaceRepo.GetStatisticsData();
+
+                // 1. Bersihkan titik data lama agar tidak menumpuk
+                chart1.Series["Booking"].Points.Clear();
+                chart1.Series["Revenue"].Points.Clear();
+                chart1.Series["Customer"].Points.Clear();
+
+                // 2. Ubah tipe garis menjadi melengkung halus (Spline)
+                chart1.Series["Booking"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+                chart1.Series["Revenue"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+                chart1.Series["Customer"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+
+                // 3. Pertebal garis agar lebih jelas seperti gambar referensi
+                chart1.Series["Booking"].BorderWidth = 2;
+                chart1.Series["Revenue"].BorderWidth = 2;
+                chart1.Series["Customer"].BorderWidth = 2;
+
+                // 4. Pisahkan penggaris: Sumbu Y Kanan untuk Booking & Customer (karena angkanya kecil)
+                chart1.Series["Booking"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+                chart1.Series["Customer"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+                chart1.Series["Revenue"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+
+                // 5. Masukkan data ke masing-masing garis
+                foreach (var item in chartData)
+                {
+                    chart1.Series["Booking"].Points.AddXY(item.LabelX, item.TotalBooking);
+                    chart1.Series["Revenue"].Points.AddXY(item.LabelX, item.Revenue);
+                    chart1.Series["Customer"].Points.AddXY(item.LabelX, item.TotalCustomer);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Menampilkan pesan error jika terjadi masalah
+                MessageBox.Show("Error loading chart data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
         private void btn_MasterWorkspace_Click(object sender, EventArgs e)
         {
 
