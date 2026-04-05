@@ -43,6 +43,7 @@ namespace CoWorkingSpaceApp.Forms
 
             LoadDataSpaces();
             LoadDataChart();
+            LoadSummaryData();
         }
 
         private void LoadDataSpaces()
@@ -67,38 +68,62 @@ namespace CoWorkingSpaceApp.Forms
                 WorkspaceRepository workspaceRepo = new WorkspaceRepository();
                 var chartData = workspaceRepo.GetStatisticsData();
 
-                // 1. Bersihkan titik data lama agar tidak menumpuk
+                
+                // Clear Data
                 chart1.Series["Booking"].Points.Clear();
                 chart1.Series["Revenue"].Points.Clear();
                 chart1.Series["Customer"].Points.Clear();
 
-                // 2. Ubah tipe garis menjadi melengkung halus (Spline)
-                chart1.Series["Booking"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-                chart1.Series["Revenue"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-                chart1.Series["Customer"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-
-                // 3. Pertebal garis agar lebih jelas seperti gambar referensi
-                chart1.Series["Booking"].BorderWidth = 2;
-                chart1.Series["Revenue"].BorderWidth = 2;
-                chart1.Series["Customer"].BorderWidth = 2;
-
-                // 4. Pisahkan penggaris: Sumbu Y Kanan untuk Booking & Customer (karena angkanya kecil)
+                // Atur Garis Melengkung
+                string[] seriesName = { "Booking", "Revenue", "Customer" };
+                foreach (var name in seriesName)
+                {
+                    var series = chart1.Series[name];
+                    series.ChartType = SeriesChartType.Spline;
+                    series.BorderWidth = 3;
+                }
                 chart1.Series["Booking"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
                 chart1.Series["Customer"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-                chart1.Series["Revenue"].YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
 
-                // 5. Masukkan data ke masing-masing garis
-                foreach (var item in chartData)
-                {
-                    chart1.Series["Booking"].Points.AddXY(item.LabelX, item.TotalBooking);
-                    chart1.Series["Revenue"].Points.AddXY(item.LabelX, item.Revenue);
-                    chart1.Series["Customer"].Points.AddXY(item.LabelX, item.TotalCustomer);
-                }
+                // Atur Warna
+
+                chart1.Series["Booking"].Color = Color.BlueViolet;
+                chart1.Series["Revenue"].Color = Color.HotPink;
+                chart1.Series["Customer"].Color = Color.DeepSkyBlue;
+
+
+                // Perlihatkan data pada chart
+
+                chart1.Series["Booking"].Points.DataBindXY(chartData.Select(d => d.LabelX).ToList(), chartData.Select(d => d.TotalBooking).ToList());
+                chart1.Series["Revenue"].Points.DataBindXY(chartData.Select(d => d.LabelX).ToList(), chartData.Select(d => d.Revenue).ToList());
+                chart1.Series["Customer"].Points.DataBindXY(chartData.Select(d => d.LabelX).ToList(), chartData.Select(d => d.TotalCustomer).ToList());
+
+                chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
+
+
             }
             catch (Exception ex)
             {
                 // Menampilkan pesan error jika terjadi masalah
                 MessageBox.Show("Error loading chart data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadSummaryData()
+        {
+            try
+            {
+                WorkspaceRepository workspaceRepo = new WorkspaceRepository();
+                int totalUser = workspaceRepo.GetTotalUsers();
+                int totalRoom = workspaceRepo.GetTotalRooms();
+
+                lb_totaluser.Text = totalUser.ToString();
+                lb_totalroom.Text = totalRoom.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal memuat data ringkasan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,6 +175,23 @@ namespace CoWorkingSpaceApp.Forms
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_totaluser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Booking_Click(object sender, EventArgs e)
+        {
+           FormBooking bookingForm = new FormBooking();
+            bookingForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Dashboard_Click_1(object sender, EventArgs e)
         {
 
         }

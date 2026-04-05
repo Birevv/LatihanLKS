@@ -106,8 +106,9 @@
     <Compile Include="Models\notifications.cs" />
     <Compile Include="Models\payments.cs" />
     <Compile Include="Models\rooms.cs" />
+    <Compile Include="Models\RoomViewModel.cs" />
     <Compile Include="Models\spaces.cs" />
-    <Compile Include="Models\spaceviewmodel.cs" />
+    <Compile Include="Models\SpaceViewModel.cs" />
     <Compile Include="Models\users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +116,15 @@
     <Compile Include="Repositories\TranscationRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\WorkspaceRepository.cs" />
+    <Compile Include="UsersControl\RoomCardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersControl\RoomCardControl.Designer.cs">
+      <DependentUpon>RoomCardControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormBooking.resx">
+      <DependentUpon>FormBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +145,9 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="UsersControl\RoomCardControl.resx">
+      <DependentUpon>RoomCardControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

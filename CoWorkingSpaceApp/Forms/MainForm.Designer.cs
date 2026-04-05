@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lbWelcome = new System.Windows.Forms.Label();
@@ -63,19 +63,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dgv_dashboard = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.space_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.lb_totalroom = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.lb_totaluser = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
@@ -280,6 +280,7 @@
             this.btn_Dashboard.TabIndex = 22;
             this.btn_Dashboard.Text = "Dashboard";
             this.btn_Dashboard.UseVisualStyleBackColor = true;
+            this.btn_Dashboard.Click += new System.EventHandler(this.btn_Dashboard_Click_1);
             // 
             // panel3
             // 
@@ -316,6 +317,7 @@
             this.btn_Booking.TabIndex = 22;
             this.btn_Booking.Text = "Booking Form";
             this.btn_Booking.UseVisualStyleBackColor = true;
+            this.btn_Booking.Click += new System.EventHandler(this.btn_Booking_Click);
             // 
             // panel4
             // 
@@ -391,12 +393,13 @@
             // 
             // panel8
             // 
+            this.panel8.AutoSize = true;
             this.panel8.Controls.Add(this.comboBox1);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(257, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1091, 70);
+            this.panel8.Size = new System.Drawing.Size(1091, 53);
             this.panel8.TabIndex = 3;
             // 
             // comboBox1
@@ -434,9 +437,9 @@
             this.panel9.Controls.Add(this.chart1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(257, 70);
+            this.panel9.Location = new System.Drawing.Point(257, 53);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1091, 651);
+            this.panel9.Size = new System.Drawing.Size(1091, 668);
             this.panel9.TabIndex = 4;
             // 
             // dgv_dashboard
@@ -462,135 +465,6 @@
             this.dgv_dashboard.Size = new System.Drawing.Size(682, 237);
             this.dgv_dashboard.TabIndex = 3;
             this.dgv_dashboard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_booking_CellContentClick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 361);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 17);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Transaksi";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel11.Controls.Add(this.label8);
-            this.panel11.Controls.Add(this.label5);
-            this.panel11.Location = new System.Drawing.Point(863, 146);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(202, 82);
-            this.panel11.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(13, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 28);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(15, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Data Room";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel10.Controls.Add(this.label7);
-            this.panel10.Controls.Add(this.label3);
-            this.panel10.Location = new System.Drawing.Point(863, 44);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(202, 82);
-            this.panel10.TabIndex = 1;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Blue;
-            this.label7.Location = new System.Drawing.Point(13, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(15, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Data User";
-            // 
-            // chart1
-            // 
-            chartArea3.AxisX.LineColor = System.Drawing.Color.LightGray;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.Gray;
-            chartArea3.AxisY.LineColor = System.Drawing.Color.LightGray;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea3.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(30, 44);
-            this.chart1.Name = "chart1";
-            series7.BorderWidth = 2;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Color = System.Drawing.Color.MediumPurple;
-            series7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series7.LabelForeColor = System.Drawing.Color.Gray;
-            series7.Legend = "Legend1";
-            series7.Name = "Booking";
-            series8.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            series8.BorderWidth = 2;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.DeepPink;
-            series8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            series8.LabelForeColor = System.Drawing.Color.Gray;
-            series8.Legend = "Legend1";
-            series8.Name = "Revenue";
-            series8.YValuesPerPoint = 4;
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.DodgerBlue;
-            series9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            series9.LabelForeColor = System.Drawing.Color.Gray;
-            series9.Legend = "Legend1";
-            series9.Name = "Customer";
-            series9.YValuesPerPoint = 3;
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
-            this.chart1.Size = new System.Drawing.Size(707, 269);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title3.BorderWidth = 2;
-            title3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "Title1";
-            title3.Text = "Statistics";
-            this.chart1.Titles.Add(title3);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // space_id
             // 
@@ -628,6 +502,136 @@
             this.capacity.MinimumWidth = 6;
             this.capacity.Name = "capacity";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 361);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 17);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Transaksi";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel11.Controls.Add(this.lb_totalroom);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Location = new System.Drawing.Point(863, 146);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(202, 82);
+            this.panel11.TabIndex = 2;
+            // 
+            // lb_totalroom
+            // 
+            this.lb_totalroom.AutoSize = true;
+            this.lb_totalroom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totalroom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lb_totalroom.Location = new System.Drawing.Point(13, 39);
+            this.lb_totalroom.Name = "lb_totalroom";
+            this.lb_totalroom.Size = new System.Drawing.Size(24, 28);
+            this.lb_totalroom.TabIndex = 2;
+            this.lb_totalroom.Text = "1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(15, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Data Room";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel10.Controls.Add(this.lb_totaluser);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Location = new System.Drawing.Point(863, 44);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(202, 82);
+            this.panel10.TabIndex = 1;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // lb_totaluser
+            // 
+            this.lb_totaluser.AutoSize = true;
+            this.lb_totaluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totaluser.ForeColor = System.Drawing.Color.Blue;
+            this.lb_totaluser.Location = new System.Drawing.Point(13, 39);
+            this.lb_totaluser.Name = "lb_totaluser";
+            this.lb_totaluser.Size = new System.Drawing.Size(24, 25);
+            this.lb_totaluser.TabIndex = 1;
+            this.lb_totaluser.Text = "1";
+            this.lb_totaluser.Click += new System.EventHandler(this.lb_totaluser_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(15, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Data User";
+            // 
+            // chart1
+            // 
+            chartArea5.AxisX.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.Gray;
+            chartArea5.AxisY.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
+            this.chart1.Location = new System.Drawing.Point(30, 44);
+            this.chart1.Name = "chart1";
+            series13.BorderWidth = 2;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.Color = System.Drawing.Color.MediumPurple;
+            series13.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series13.LabelForeColor = System.Drawing.Color.Gray;
+            series13.Legend = "Legend1";
+            series13.Name = "Booking";
+            series14.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            series14.BorderWidth = 2;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series14.Color = System.Drawing.Color.DeepPink;
+            series14.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            series14.LabelForeColor = System.Drawing.Color.Gray;
+            series14.Legend = "Legend1";
+            series14.Name = "Revenue";
+            series14.YValuesPerPoint = 4;
+            series15.BorderWidth = 2;
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series15.Color = System.Drawing.Color.DodgerBlue;
+            series15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            series15.LabelForeColor = System.Drawing.Color.Gray;
+            series15.Legend = "Legend1";
+            series15.Name = "Customer";
+            series15.YValuesPerPoint = 3;
+            this.chart1.Series.Add(series13);
+            this.chart1.Series.Add(series14);
+            this.chart1.Series.Add(series15);
+            this.chart1.Size = new System.Drawing.Size(707, 269);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title5.BorderWidth = 2;
+            title5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.Name = "Title1";
+            title5.Text = "Statistics";
+            this.chart1.Titles.Add(title5);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -638,7 +642,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -668,6 +671,7 @@
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -705,9 +709,9 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lb_totalroom;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_totaluser;
         private System.Windows.Forms.DataGridView dgv_dashboard;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn space_id;

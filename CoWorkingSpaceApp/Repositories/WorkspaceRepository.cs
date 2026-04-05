@@ -30,7 +30,7 @@ namespace CoWorkingSpaceApp.Repositories
             }
         }
 
-        public IEnumerable<spaceviewmodel> GetAllSpaces()
+        public IEnumerable<SpaceViewModel> GetAllSpaces()
         {
             using (SqlConnection db = DbConnection.GetConn())
             {
@@ -45,7 +45,7 @@ namespace CoWorkingSpaceApp.Repositories
             FROM spaces s
             LEFT JOIN bookings b ON s.space_id = b.space_id
             LEFT JOIN payments p ON b.booking_id = p.booking_id";
-                return db.Query<spaceviewmodel>(query);
+                return db.Query<SpaceViewModel>(query);
             }
         }
 
@@ -55,15 +55,54 @@ namespace CoWorkingSpaceApp.Repositories
             {
                 string query = @"
             SELECT 
-                s.type AS LabelX, 
-                COUNT(b.booking_id) AS TotalBooking, 
-                SUM(p.amount) AS Revenue, 
-                COUNT(DISTINCT b.user_id) AS TotalCustomer
-            FROM spaces s
-            LEFT JOIN bookings b ON s.space_id = b.space_id
-            LEFT JOIN payments p ON b.booking_id = p.booking_id
-            GROUP BY s.type";
+                    CONVERT(VARCHAR(10), b.start_time, 120) AS LabelX, 
+                    COUNT(b.booking_id) AS TotalBooking,
+                    ISNULL(SUM(p.amount), 0) AS Revenue,
+                    COUNT(DISTINCT b.user_id) AS TotalCustomer
+                FROM bookings b
+                LEFT JOIN payments p ON b.booking_id = p.booking_id
+                GROUP BY CONVERT(VARCHAR(10), b.start_time, 120)
+                ORDER BY LabelX ASC";
                 return db.Query<chartdatamodel>(query);
+            }
+        }
+
+        public int GetTotalUsers()
+        {
+            {
+                using (SqlConnection db = DbConnection.GetConn())
+                {
+                    string query = "SELECT COUNT(*) FROM users";
+                    return db.ExecuteScalar<int>(query);
+                }
+            }
+        }
+
+        public int GetTotalRooms()
+        {
+            using (SqlConnection db = DbConnection.GetConn())
+            {
+                string query = "SELECT COUNT(*) FROM spaces";
+                return db.ExecuteScalar<int>(query);
+            }
+        }
+
+        public IEnumerable<RoomViewModel> GetAllRooms()
+        {
+            using (SqlConnection db = DbConnection.GetConn())
+            {
+                string query = @"
+            SELECT 
+                r.room_id AS room_id,
+                r.space_id AS space_id,
+                s.name       AS name,
+                s.type       AS type,
+                s.capacity   AS capacity,
+                r.equipment  AS equipment,
+                s.price      AS price
+            FROM rooms r
+            INNER JOIN spaces s ON r.space_id = s.space_id";
+                return db.Query<RoomViewModel>(query);
             }
         }
         

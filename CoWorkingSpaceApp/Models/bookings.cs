@@ -17,6 +17,6 @@ namespace CoWorkingSpaceApp.Models
         public int space_id { get; set; }
         public DateTime start_time { get; set; }
         public DateTime end_time { get; set; }
-        public string status { get; set; }
+        public string status { get; set; }  
     }
 }
