@@ -13,11 +13,11 @@ namespace CoWorkingSpaceApp.Repositories
     public class WorkspaceRepository : BaseRepository<spaces>
     {
         public IEnumerable<spaces> GetByType(string roomType)
-        { 
+        {
             using (SqlConnection db = DbConnection.GetConn())
             {
                 string query = "SELECT * FROM spaces WHERE type = @type";
-                return db.Query<spaces>(query, new {type = roomType});
+                return db.Query<spaces>(query, new { type = roomType });
             }
         }
 
@@ -26,7 +26,7 @@ namespace CoWorkingSpaceApp.Repositories
             using (SqlConnection db = DbConnection.GetConn())
             {
                 string query = "SELECT * FROM spaces WHERE name LIKE @Keyword";
-                return db.Query<spaces>(query, new {Keyword = "%" + keyword + "%" });
+                return db.Query<spaces>(query, new { Keyword = "%" + keyword + "%" });
             }
         }
 
@@ -105,6 +105,27 @@ namespace CoWorkingSpaceApp.Repositories
                 return db.Query<RoomViewModel>(query);
             }
         }
-        
+
+        public RoomViewModel GetRoomById(int roomId)
+        {
+            using (SqlConnection conn = DbConnection.GetConn())
+            {
+                string query = @"
+            SELECT 
+                r.room_id AS room_id,
+                r.space_id AS space_id,
+                r.equipment AS equipment,
+                s.name AS name,       
+                s.type AS type,       
+                s.capacity AS capacity,
+                s.price AS price           
+            FROM rooms r
+            INNER JOIN spaces s ON r.space_id = s.space_id
+            WHERE r.room_id = @Id";
+
+                return conn.QueryFirstOrDefault<RoomViewModel>(query, new { Id = roomId });
+            }
+        }
+
     }
 }

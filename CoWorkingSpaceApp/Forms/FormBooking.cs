@@ -49,7 +49,10 @@ namespace CoWorkingSpaceApp.Forms
             if (selectedCard != null)
             {
                 int roomId = selectedCard.RoomId;
-                MessageBox.Show($"Anda memilih ruangan: {selectedCard.RoomName} (ID: {roomId})");
+                
+                FormTransactions formPembayaran = new FormTransactions(roomId);
+                formPembayaran.Show();
+                this.Hide();
             }
         }
 
@@ -89,6 +92,26 @@ namespace CoWorkingSpaceApp.Forms
         }
 
         private void flprooms_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pb_roomImage_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_type_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_roomName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_amenities_Click(object sender, EventArgs e)
         {
 
         }

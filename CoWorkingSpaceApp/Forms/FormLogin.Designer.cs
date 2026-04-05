@@ -66,10 +66,10 @@
             // 
             this.tb_email.BackColor = System.Drawing.Color.LightGray;
             this.tb_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_email.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tb_email.Location = new System.Drawing.Point(11, 39);
+            this.tb_email.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_email.Location = new System.Drawing.Point(16, 37);
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(323, 19);
+            this.tb_email.Size = new System.Drawing.Size(319, 23);
             this.tb_email.TabIndex = 0;
             // 
             // btn_login
@@ -154,10 +154,10 @@
             // 
             this.tb_password.BackColor = System.Drawing.Color.LightGray;
             this.tb_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_password.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tb_password.Location = new System.Drawing.Point(11, 39);
+            this.tb_password.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_password.Location = new System.Drawing.Point(16, 37);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(323, 19);
+            this.tb_password.Size = new System.Drawing.Size(323, 23);
             this.tb_password.TabIndex = 0;
             this.tb_password.UseSystemPasswordChar = true;
             // 

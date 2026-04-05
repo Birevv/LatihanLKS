@@ -634,6 +634,7 @@
             this.lbl_amenities.Size = new System.Drawing.Size(355, 61);
             this.lbl_amenities.TabIndex = 8;
             this.lbl_amenities.Text = "4 Guest - Mineral Water - Wifi - Air Conditioner";
+            this.lbl_amenities.Click += new System.EventHandler(this.lbl_amenities_Click);
             // 
             // lbl_roomName
             // 
@@ -644,6 +645,7 @@
             this.lbl_roomName.Size = new System.Drawing.Size(271, 23);
             this.lbl_roomName.TabIndex = 7;
             this.lbl_roomName.Text = " Semi Private Co-Working Space";
+            this.lbl_roomName.Click += new System.EventHandler(this.lbl_roomName_Click);
             // 
             // lbl_type
             // 
@@ -654,6 +656,7 @@
             this.lbl_type.Size = new System.Drawing.Size(49, 20);
             this.lbl_type.TabIndex = 6;
             this.lbl_type.Text = "J Type";
+            this.lbl_type.Click += new System.EventHandler(this.lbl_type_Click);
             // 
             // pb_roomImage
             // 
@@ -664,6 +667,7 @@
             this.pb_roomImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_roomImage.TabIndex = 5;
             this.pb_roomImage.TabStop = false;
+            this.pb_roomImage.Click += new System.EventHandler(this.pb_roomImage_Click_1);
             // 
             // panel13
             // 

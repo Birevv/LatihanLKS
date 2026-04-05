@@ -11,7 +11,7 @@ using Dapper;
 
 namespace CoWorkingSpaceApp.Repositories
 {
-    public class TranscationRepository : BaseRepository<bookings>
+    public class TransactionRepository : BaseRepository<bookings>
     {
         public IEnumerable<dynamic> GetBookingHistory()
         {
